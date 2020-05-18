@@ -13,12 +13,6 @@ r = response.json()
 x = r["main"]
 
 TemperatureK = x["temp"]
-
-"""
-TemperatureF = (int(TemperatureK) - 273.15) * 9/5 + 32
-TemperatureFinal = Decimal(TemperatureF).quantize(Decimal("1"))
-"""
-
 print("Temperature = " + str(tempconvert(TemperatureK)) + " F")
 
 #print(response.content)
