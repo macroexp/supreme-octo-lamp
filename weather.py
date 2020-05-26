@@ -16,5 +16,5 @@ z = r["weather"]
 
 #TemperatureK = x["temp"]
 print("The temperature in " + str(r["name"]) + " is " + str(tempconvert(x["temp"])) + "\xb0 F. It feels like " + str(tempconvert(x["feels_like"])) + "\xb0 F.")
-print("Outside, it is currently " + int(z["description"]) + ".")
-print(response.content)
+print("Outside, it is currently " + z[0]["description"] + ".")
+#print(response.content)
