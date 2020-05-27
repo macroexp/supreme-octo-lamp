@@ -6,14 +6,14 @@ def tempconvert(arg):
     #Kelvin to Fahrenheit
     return Decimal(y).quantize(Decimal("1"))
 
+zip = input("Enter zip code:")
+
 appid = "98d6b9ebdd773ed18ee226d7b3010185"
 url = ("http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&appid=" + appid)
 response = requests.get(url)
 r = response.json()
 x = r["main"]
 z = r["weather"]
-
-zip = input("Enter zip code:")
 
 #TemperatureK = x["temp"]
 #print("The temperature in " + str(r["name"]) + " is " + str(tempconvert(x["temp"])) + "\xb0 F. It feels like " + str(tempconvert(x["feels_like"])) + "\xb0 F.")
