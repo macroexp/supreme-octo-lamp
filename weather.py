@@ -23,22 +23,6 @@ r = response.json()
 x = r["main"]
 z = r["weather"]
 
-"""
-while True:
-    if response != 200:
-        print("Sorry, something went wrong.")
-        continue
-    else:
-        break
-"""
-"""
-try:
-    print(response) 
-except KeyError:
-    print("pioops")
-"""
-
-
 #TemperatureK = x["temp"]
 print("The temperature in " + str(r["name"]) + " is " + str(tempconvert(x["temp"])) + "\xb0 F. It feels like " + str(tempconvert(x["feels_like"])) + "\xb0 F.")
 print("Outside, it is currently " + z[0]["description"] + ".")
