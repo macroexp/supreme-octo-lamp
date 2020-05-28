@@ -1,0 +1,36 @@
+'{
+    "coord": {
+        "lon": -77.34,
+        "lat": 38.96
+    },
+    "weather": [
+        {
+            "id": 803,
+            "main": "Clouds",
+            "description": "broken clouds",
+            "icon": "04d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 299.85,
+        "feels_like": 300.85,
+        "temp_min": 298.71,
+        "temp_max": 300.93,
+        "pressure": 1017,
+        "humidity": 78
+    },
+    "visibility": 16093,
+    "wind": {
+        "speed": 5.7,
+        "deg": 170
+    },
+    "clouds": {
+        "all": 75
+    },
+    "dt": 1590689728,
+    "sys": {
+        "type": 1,
+        "id": 4481,
+        "country": "US",
+        "sunrise": 1590659

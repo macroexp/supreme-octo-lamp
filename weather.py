@@ -6,12 +6,14 @@ def tempconvert(arg):
     #Kelvin to Fahrenheit
     return Decimal(y).quantize(Decimal("1"))
 
-zip = input("Enter zip code:")
-while len(zip) != 5:
+while True:
+    zip = input("Enter zip code:")
+    if not len(zip) == 5 and zip.isdigit():
     #check for 5 digit zip code
-    pass
-else:
-    print(zip)
+        print("Sorry, that wasn't a valid zip code. Please try again.")
+        continue
+    else:
+        break
 
 appid = "98d6b9ebdd773ed18ee226d7b3010185"
 url = ("http://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&appid=" + appid)
@@ -31,5 +33,5 @@ except KeyError:
 #TemperatureK = x["temp"]
 print("The temperature in " + str(r["name"]) + " is " + str(tempconvert(x["temp"])) + "\xb0 F. It feels like " + str(tempconvert(x["feels_like"])) + "\xb0 F.")
 print("Outside, it is currently " + z[0]["description"] + ".")
-#print(response.content)
+print(response.content)
 #print(response)
