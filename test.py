@@ -4,8 +4,7 @@ class Food:
         self.name = name
         self.color = color
     def __str__(self):
-        #print self.name + " color: " + self.color 
-        return("Generic Food: %s" % self.name) 
+        return "Generic Food: %s" % self.name.capitalize() + "; " + self.name.capitalize() + " color: %s " % self.color.capitalize()  
     def __repr__(self):
         return self.__str__()
 
