@@ -30,7 +30,7 @@ class RedMeat(Food):
 
 foods = [Food("Bread", "Brown"), RedMeat("Steak", "Dark Brown"), Poultry("Chicken Thighs", "Charred"), RootVeg("Potatoes", "Red"), Green("Broccoli", "Green")]
 fooddictionary = {food.name: food for food in foods}
-print(fooddictionary)
+#print(fooddictionary)
 
 def judgeMeal(plate):
     foods = [fooddictionary[food] for food in plate]
@@ -42,5 +42,6 @@ def judgeMeal(plate):
     return judgement
 
 plate = ["Chicken Thighs", "Steak", "Potatoes", "Broccoli", "Steak"]
+#plate = input("Input your meal:")
 judgement = judgeMeal(plate)
 print(judgement)
