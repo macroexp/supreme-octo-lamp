@@ -1,4 +1,5 @@
 import math
+import numpy
 
 def f(x):
     return x+3
@@ -33,3 +34,21 @@ if check(int(n)): print("Prime")
 #if check is true?
 else: print("Not prime")
 """
+arg = int(input("Provide a number:"))
+
+print(math.factorial(arg))
+
+result = list(range(arg + int(1)))
+del result[0]
+
+def multiplylist(numbers):
+    total = 1
+    for x in numbers:
+        total *= x
+    return total
+
+print(result)
+print(numpy.prod(result))
+print(multiplylist(result))
+print(math.prod(result))
+    
