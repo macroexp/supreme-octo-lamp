@@ -11,5 +11,10 @@ def div(x, y):
 
 #print(div(2,3))
 
-name = "tim"
-print(name.capitalize())
+x = 23
+
+def myfunction(x):
+    x = 3
+    print(2 + x)
+
+print(myfunction(x))
