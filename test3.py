@@ -5,4 +5,11 @@ def multiply(x, y):
     product = x*y
     return product
 
-print(multiply(2,3))
+def div(x, y):
+    product = x/y
+    return product
+
+#print(div(2,3))
+
+name = "tim"
+print(name.capitalize())
