@@ -13,7 +13,7 @@ def div(x, y):
 
 #print(div(2,3))
 
-x = math.sqrt(math.pi)
+#x = math.sqrt(math.pi)
 
 def myfunction():
     global x
@@ -27,7 +27,9 @@ def check(n):
         if n % x == 0:
             return False
     return True
-
+"""
 n = input("Check if a number is prime: ")
 if check(int(n)): print("Prime")
+#if check is true?
 else: print("Not prime")
+"""
