@@ -48,7 +48,14 @@ def multiplylist(numbers):
     return total
 
 print(result)
-print(numpy.prod(result))
-print(multiplylist(result))
-print(math.prod(result))
+
+if math.factorial(arg) == multiplylist(result):
+    print(multiplylist(result))
+elif math.factorial(arg) != multiplylist(result):
+    print("Something went wrong.")
+#using math.factorial to confirm rather than numpy.prod because the latter seems to break after arg = 20.
+
+#print(numpy.prod(result))
+#print(multiplylist(result))
+#print(math.prod(result))
     
