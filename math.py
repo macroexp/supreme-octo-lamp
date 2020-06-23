@@ -54,6 +54,7 @@ if math.factorial(arg) == multiplylist(result):
 elif math.factorial(arg) != multiplylist(result):
     print("Something went wrong.")
 #using math.factorial to confirm rather than numpy.prod because the latter seems to break after arg = 20.
+#dunno why vscode doesnt like math.
 
 #print(numpy.prod(result))
 #print(multiplylist(result))
