@@ -4,7 +4,7 @@ from scipy.integrate import quad
 #baseline using scipy.integrate. using to check my code
 
 def integrand(x):
-    return x*2 
+    return (x**2) 
 #input function here
 
 #having trouble with taking inputs for functions. feels like would take a while to get that working. 
