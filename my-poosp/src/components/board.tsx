@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './square';
 import './game';
+import { Square } from './square';
 
-class Board extends React.Component {
+type boardprops = {squares: Array<string>, onClick: (i:number) => void}
+
+export class Board extends React.Component<boardprops, {}> {
     renderSquare(i: number) {
       return (
         <Square
