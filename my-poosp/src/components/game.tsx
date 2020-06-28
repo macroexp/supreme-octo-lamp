@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import './square';
 import './board'
 import { Board } from './board';
@@ -8,7 +7,7 @@ import { Board } from './board';
 //type MyProps = { history: }
 type gamestate = {stepNumber: number, xIsNext: boolean, history: Array<{squares: Array<any>}>}
 
-class Game extends React.Component<{}, gamestate> {
+export class Game extends React.Component<{}, gamestate> {
     constructor(props: any) {
         super(props);
         this.state = {
