@@ -1,0 +1,23 @@
+{
+  "name": "supreme-octo-lamp",
+  "version": "1.0.0",
+  "description": "run this to get the current conditions",
+  "main": "index.js",
+  "dependencies": {
+    "create-react-app": "^3.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macroexp/supreme-octo-lamp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/macroexp/supreme-octo-lamp/issues"
+  },
+  "homepage": "https://github.com/macroexp/supreme-octo-lamp#readme"
+}
