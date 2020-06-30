@@ -112,25 +112,25 @@ const Format: FC = () => (
                         </Link>
                     </Space>
                     <Demo />
-                    <Footer style={{textAlign:'left'}}>
+                    <Breadcrumb style={{margin:'16px 0', padding:'0 50px'}}>
+                        <Breadcrumb.Item>Home</Breadcrumb.Item>
+                        <Breadcrumb.Item>
+                            <a href="">Thing</a>
+                        </Breadcrumb.Item>
+                        <Breadcrumb.Item>App</Breadcrumb.Item>
+                    </Breadcrumb>
+                    <div className="site-layout-content">
+
+                    <br></br><br></br>
+
+                    </div>
+                    <Footer style={{margin:'24px -50px 0'}}>
                         Antd copyright 2020
                         Press <Text keyboard>Poop?</Text> to exit...
                     </Footer>
                 </Typography>
             </Content>
         </Layout>
-        <Content style={{padding:'0 50px'}}>
-            <Breadcrumb style={{margin:'16px 0'}}>
-                <Breadcrumb.Item>Home</Breadcrumb.Item>
-                <Breadcrumb.Item>List</Breadcrumb.Item>
-                <Breadcrumb.Item>App</Breadcrumb.Item>
-            </Breadcrumb>
-            <div className="site-layout-content">
-
-            <br></br><br></br>
-
-            </div>
-        </Content>
     </Layout>
 );
 
