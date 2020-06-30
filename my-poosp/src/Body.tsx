@@ -27,28 +27,7 @@ class Demo extends React.Component {
             </div>
         )
     }
-
 }
-
-const Body: FC = () => (
-    <div className="Body">
-        
-
-        <Typography>
-            
-            
-
-            <br></br><br></br>
-
-            {/*<Text editable={{ onChange: this.onChange }}>{this.state.str}</Text>*/}
-
-            <br></br><br></br>
-
-            
-        </Typography>
-
-    </div>
-);
 
 const Format: FC = () => (
     <Layout>
@@ -134,6 +113,5 @@ const Format: FC = () => (
     </Layout>
 );
 
-export default Body;
-export {Format}
+export default Format;
 
