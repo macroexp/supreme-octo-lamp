@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Body from './Body';
+import Body, {Format} from './Body';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Format></Format>
     <Body></Body>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,10 +1,51 @@
 import React, { FC } from 'react';
-import { Typography, Divider } from 'antd';
+import { Typography, Divider, Space, Button, Tooltip, Layout, Menu, Breadcrumb } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph, Text, Link } = Typography;
+const { Header, Content, Footer } = Layout
+
+class Demo extends React.Component {
+    state = {
+        str: 'This is an editable text.',
+    };
+
+    onChange = (str: any) => {
+        console.log('Content change:', str);
+        this.setState({ str });
+    };
+
+    render() {
+        return (
+            <div>
+                <Text editable={{ onChange: this.onChange }}>{this.state.str}</Text>
+                <br></br>
+                <Text copyable>This is a copyable text.</Text>
+                <br></br>
+            </div>
+        )
+    }
+
+}
 
 const Body: FC = () => (
     <div className="Body">
+        <Button type="primary" block size="large">Big Button</Button>
+
+        <br></br>
+
+        <Button type="default" danger>Default Button</Button>
+        <Button type="dashed" disabled>
+            DisabledDashed
+        </Button>
+
+        <Tooltip title="search">
+            <Button type="primary" shape="round" icon={<SearchOutlined />}></Button>
+        </Tooltip>
+
+        <Title>Default Title.</Title>
+        <Title level={2}>Level 2 Title. Goes down to 4.</Title>
+
         <Typography>
             <Title>
                 Introduction
@@ -17,11 +58,52 @@ const Body: FC = () => (
                     The outbreak was first identified in Wuhan, China,in December 2019.[4][6] The World Health Or
                     ganization declared the outbreak a Public Health Emergency of International Concern on 30 Ja
                 </Text>
-                <br></br><br></br>
-                Press <Text keyboard>Esc</Text> to exit...
             </Paragraph>
+
+            <br></br><br></br>
+
+            <Space direction="vertical">
+                <Text>Text</Text>
+                <Text type="warning">Warning Text</Text>
+                <Text strong underline>Strong Underlined Text</Text>
+                <Link href="https://ant.design/components/typography/">
+                    For all text varieties click here.
+                </Link>
+            </Space>
+
+            <br></br><br></br>
+
+            {/*<Text editable={{ onChange: this.onChange }}>{this.state.str}</Text>*/}
+
+            <br></br><br></br>
+
+            Press <Text keyboard>Poop?</Text> to exit...
         </Typography>
+        <Demo></Demo>
     </div>
 );
 
-export default Body
+const Format: FC = () => (
+    <div className = "layout">
+        <Header>
+            <div className = "Logo"></div>
+            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+                <Menu.Item key="1">About 1</Menu.Item>
+                <Menu.Item key="2">About 2</Menu.Item>
+                <Menu.Item key="3">About 3</Menu.Item>
+            </Menu>
+        </Header>
+        <Content style={{padding:'0 50px'}}>
+            <Breadcrumb style={{margin:'16px 0'}}>
+                <Breadcrumb.Item>Home</Breadcrumb.Item>
+                <Breadcrumb.Item>List</Breadcrumb.Item>
+                <Breadcrumb.Item>App</Breadcrumb.Item>
+            </Breadcrumb>
+            <div className="site-layout-content">Content</div>
+        </Content>
+        <Footer style={{textAlign:'left'}}>Ant Design copyright 2013</Footer>
+    </div>
+);
+
+export default Body;
+export {Format}
