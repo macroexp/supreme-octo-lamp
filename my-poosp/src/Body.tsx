@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
 import { Typography, Divider, Space, Button, Tooltip, Layout, Menu, Breadcrumb } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
+import App from './App';
 
 const { Title, Paragraph, Text, Link } = Typography;
-const { Header, Content, Footer } = Layout
+const { Header, Content, Footer, Sider } = Layout
 
 class Demo extends React.Component {
     state = {
@@ -47,21 +48,7 @@ const Body: FC = () => (
         <Title level={2}>Level 2 Title. Goes down to 4.</Title>
 
         <Typography>
-            <Title>
-                Introduction
-            </Title>
-            <Paragraph>
-                This is a paragraph. The COVID-19 pandemic, also known as the coronavirus pandemic, is an ong
-                oing global pandemic of coronavirus disease 2019 (COVID‑19), caused by severe acute respirato
-                ry syndrome coronavirus 2 (SARS‑CoV‑2).[1] 
-                <Text strong>
-                    The outbreak was first identified in Wuhan, China,in December 2019.[4][6] The World Health Or
-                    ganization declared the outbreak a Public Health Emergency of International Concern on 30 Ja
-                </Text>
-            </Paragraph>
-
-            <br></br><br></br>
-
+            
             <Space direction="vertical">
                 <Text>Text</Text>
                 <Text type="warning">Warning Text</Text>
@@ -84,8 +71,8 @@ const Body: FC = () => (
 );
 
 const Format: FC = () => (
-    <div className = "layout">
-        <Header>
+    <Layout>
+        <Header style={{position:'fixed', zIndex: 1, width:'100%'}}>
             <div className = "Logo"></div>
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
                 <Menu.Item key="1">About 1</Menu.Item>
@@ -93,16 +80,42 @@ const Format: FC = () => (
                 <Menu.Item key="3">About 3</Menu.Item>
             </Menu>
         </Header>
+        <Sider style={{
+            overflow: 'auto',
+            height: '100vh',
+            position: 'fixed',
+            left: 0,
+        }}>
+
+        </Sider>
         <Content style={{padding:'0 50px'}}>
             <Breadcrumb style={{margin:'16px 0'}}>
                 <Breadcrumb.Item>Home</Breadcrumb.Item>
                 <Breadcrumb.Item>List</Breadcrumb.Item>
                 <Breadcrumb.Item>App</Breadcrumb.Item>
             </Breadcrumb>
-            <div className="site-layout-content">Content</div>
+            <div className="site-layout-content">
+                <Typography>
+                    <Title>
+                        <br></br>
+                        Introduction
+                    </Title>
+                    <Paragraph>
+                        This is a paragraph. The COVID-19 pandemic, also known as the coronavirus pandemic, is an ong
+                        oing global pandemic of coronavirus disease 2019 (COVID‑19), caused by severe acute respirato
+                        ry syndrome coronavirus 2 (SARS‑CoV‑2).[1] 
+                        <Text strong>
+                            The outbreak was first identified in Wuhan, China,in December 2019.[4][6] The World Health Or
+                            ganization declared the outbreak a Public Health Emergency of International Concern on 30 Ja
+                        </Text>
+                    </Paragraph>
+                </Typography>
+            <br></br><br></br>
+
+            </div>
         </Content>
-        <Footer style={{textAlign:'left'}}>Ant Design copyright 2013</Footer>
-    </div>
+        <Footer style={{textAlign:'left'}}>Antd copyright 2020</Footer>
+    </Layout>
 );
 
 export default Body;
