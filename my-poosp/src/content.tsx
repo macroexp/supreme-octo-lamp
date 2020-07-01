@@ -20,12 +20,9 @@ export const BodyContent: FC<{tab:string}> = (props) => {
             <Button type="primary" shape="round" icon={<SearchOutlined />}></Button>
         </Tooltip>
 
-        <Title>Default Title.</Title>
-        <Title level={2}>Level 2 Title. Goes down to 4.</Title>
-        <Title>
-            <br></br>
-            
-            Introduction
+        <Title>Welcome!</Title>
+        <Title level={2}>This is a website.
+            <br /><br />
         </Title>
         <Paragraph>
             This is a paragraph. The COVID-19 pandemic, also known as the coronavirus pandemic, is an ong
