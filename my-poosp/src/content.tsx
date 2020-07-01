@@ -25,12 +25,23 @@ export const BodyContent: FC<{tab:string}> = (props) => {
             <br /><br />
         </Title>
         <Paragraph>
-            This is a paragraph. The COVID-19 pandemic, also known as the coronavirus pandemic, is an ong
-            oing global pandemic of coronavirus disease 2019 (COVID‑19), caused by severe acute respirato
-            ry syndrome coronavirus 2 (SARS‑CoV‑2).[1] 
+            Welcome to the paragraph. The text can do many things, like
+            <Text type="warning">
+                warn, and can also      
+            </Text> 
+            <Text copyable underline>
+                be copied. The underlined text will be copied to your clipboard when clicked.
+            </Text>
+            <Text editable underline>
+                This is editable text. Feel free to edit this text.
+            </Text>
+            Enjoy this text in bold: 
             <Text strong>
-                The outbreak was first identified in Wuhan, China,in December 2019.[4][6] The World Health Or
-                ganization declared the outbreak a Public Health Emergency of International Concern on 30 Ja
+                TypeScript is an open-source programming language developed and maintained by 
+                Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing 
+                to the language. TypeScript is designed for development of large applications and transcompiles 
+                to JavaScript.[4] As TypeScript is a superset of JavaScript, existing JavaScript programs are 
+                also valid TypeScript programs.
             </Text>
         </Paragraph>
         <Space direction="vertical">
