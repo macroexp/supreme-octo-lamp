@@ -3,9 +3,9 @@ import './Assembly.css'
 import { Typography, Divider, Space, Button, Tooltip, Layout, Menu, Breadcrumb } from 'antd';
 import { SearchOutlined, AppstoreOutlined,BarChartOutlined,CloudOutlined,
     ShopOutlined, TeamOutlined, UserOutlined, UploadOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import App from './App';
+import App from '../App';
 import { SelectParam } from 'antd/lib/menu';
-import { Game } from './components/game';
+import { Game } from '../components/game';
 import { BodyContent } from './content';
 
 const { Title, Paragraph, Text, Link } = Typography;
