@@ -1,15 +1,15 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { Typography, Button, Tooltip, Space, Breadcrumb, Layout } from 'antd';
 import { SearchOutlined, AppstoreOutlined,BarChartOutlined,CloudOutlined,
     ShopOutlined, TeamOutlined, UserOutlined, UploadOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import { Demo } from './Assembly';
+import { Demo, Clicker, Garage, } from './Classes';
 import { Game } from '../components/game';
 
 const { Title, Paragraph, Text, Link } = Typography;
 const { Header, Content, Footer, Sider } = Layout;
 
 export const BodyContent: FC<{tab:string}> = (props) => {
-    const tab1 =  <Typography className="site-layout-text" style={{padding: 24, textAlign:'left'}}>
+    const tab1 = <Typography className="site-layout-text" style={{padding: 24, textAlign:'left'}}>
         <Button type="primary" block size="large">Big Button</Button>
         <Button type="default" danger>Default Button</Button>
         <Button type="dashed" disabled>
@@ -27,7 +27,7 @@ export const BodyContent: FC<{tab:string}> = (props) => {
         <Paragraph>
             Welcome to the paragraph. The text can do many things, like
             <Text type="warning">
-                warn, and can also      
+                 warn, and can also 
             </Text> 
             <Text copyable underline>
                 be copied. The underlined text will be copied to your clipboard when clicked.
@@ -71,7 +71,10 @@ export const BodyContent: FC<{tab:string}> = (props) => {
         </Footer>
     </Typography>
     const tab2 = <Game />
-    const tab3 = <Button type="primary" block size="large">Big Button</Button>
+    const tab3 = <Garage />
+
+
+
 
     if(props.tab == "1")
         return tab1

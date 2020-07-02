@@ -11,30 +11,6 @@ import { BodyContent } from './content';
 const { Title, Paragraph, Text, Link } = Typography;
 const { Header, Content, Footer, Sider } = Layout;
 
-export class Demo extends React.Component {
-    state = {
-        str: 'This is an editable text.',
-    };
-
-    onChange = (str: any) => {
-        console.log('Content change:', str);
-        this.setState({ str });
-    };
-
-    render() {
-        return (
-            <div>
-                <Text editable={{ onChange: this.onChange }}>{this.state.str}</Text>
-                <br></br>
-                <Text copyable>This is a copyable text.</Text>
-                <br></br>
-            </div>
-        )
-    }
-}
-
-
-
 const Format: FC = () => {
     const [CurrentTab, SetCurrentTab] = useState("1");
     const SelectTab = (param: SelectParam) => {
@@ -43,7 +19,7 @@ const Format: FC = () => {
     return <Layout>
         <Header style={{position:'fixed', zIndex: 1, width:'100%'}}>
             <div className = "Logo"></div>
-            <Menu theme="dark" mode="horizontal" style={{paddingLeft:150}} defaultSelectedKeys={['3']}>
+            <Menu theme="dark" mode="horizontal" style={{paddingLeft:150}} defaultSelectedKeys={['1']}>
                 <Menu.Item key="1">About 1</Menu.Item>
                 <Menu.Item key="2">About 2</Menu.Item>
                 <Menu.Item key="3">About 3</Menu.Item>
@@ -55,8 +31,8 @@ const Format: FC = () => {
             position: 'fixed',
             left: 0,
         }}>
-            <Menu onSelect={SelectTab} theme="dark" mode="inline" style={{paddingTop: 80}} defaultSelectedKeys={['3']}>
-                <Menu.Item key="1" icon={<UserOutlined />}>Option 1</Menu.Item>
+            <Menu onSelect={SelectTab} theme="dark" mode="inline" style={{paddingTop: 80}} defaultSelectedKeys={['1']}>
+                <Menu.Item key="1" icon={<UserOutlined />}>Home</Menu.Item>
                 <Menu.Item key="2" icon={<VideoCameraOutlined />}>TicTacToe</Menu.Item>
                 <Menu.Item key="3" icon={<UploadOutlined />}>Big Button</Menu.Item>
                 <Menu.Item key="4" icon={<TeamOutlined />}>Option 4</Menu.Item>
