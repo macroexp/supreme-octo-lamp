@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from 'react';
 import { Typography, Button, Tooltip, Space, Breadcrumb, Layout } from 'antd';
 import { SearchOutlined, AppstoreOutlined,BarChartOutlined,CloudOutlined,
     ShopOutlined, TeamOutlined, UserOutlined, UploadOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import { Demo, Clicker, Garage, } from './Classes';
+import { Demo, Clicker, Garage, Cards, TestTab, } from './Classes';
 import { Game } from '../components/game';
 
 const { Title, Paragraph, Text, Link } = Typography;
@@ -72,7 +72,8 @@ export const BodyContent: FC<{tab:string}> = (props) => {
     </Typography>
     const tab2 = <Game />
     const tab3 = <Garage />
-
+    const tab4 = <Cards />
+    const tab5 = <TestTab />
 
 
 
@@ -82,7 +83,9 @@ export const BodyContent: FC<{tab:string}> = (props) => {
         return tab2
     else if(props.tab == "3")
         return tab3
-    else 
-        return tab1
+    else if(props.tab == "4")
+        return tab4
+    else
+        return tab5
 
 }

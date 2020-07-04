@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { Typography, Button, Tooltip, Space, Breadcrumb, Layout } from 'antd';
+import { Typography, Button, Tooltip, Space, Breadcrumb, Layout, Card, Row, Col } from 'antd';
 import { SearchOutlined, AppstoreOutlined,BarChartOutlined,CloudOutlined,
     ShopOutlined, TeamOutlined, UserOutlined, UploadOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Game } from '../components/game';
@@ -32,7 +32,9 @@ export class Demo extends React.Component {
     }
 }
 
-export const Clicker: FC<{poop: any}> = () => {
+type clickerState = {count: number}
+
+export const Clicker: FC<{clickerState: any}> = () => {
     const [count, setCount] = useState(0);
 
     return (
@@ -80,40 +82,70 @@ export class Garage extends React.Component {
     }
 }
 
-type clockState = {timerID: any, date: any}
 
-export class Clock extends React.Component<{}, clockState> {
-    constructor(props: any) {
-        super(props);
-        this.state = {date: new Date()};
+export class Cards extends React.Component {
+    render() {
+        return (
+            <Space>
+                <Row>
+                    <Col span={12}>
+                        <Card title="Card" style={{ width: 300, height: 300}}>
+                            <Paragraph>
+                                Content goes here.
+                            </Paragraph>
+                        </Card>
+                    </Col>
+                </Row>
+                <Card title="Another Card" style={{ width: 200, height: 150 }}>
+                    <Paragraph>
+                        Here's some more content space.
+                    </Paragraph>
+                </Card>
+                <Card title="Third Card" style={{ width: 300, height: 400}}>
+                    <Paragraph>
+                        More Card.
+                    </Paragraph>
+                </Card>
+                <Card title="Third Card" style={{ width: 300, height: 400}}>
+                    <Paragraph>
+                        More Card.
+                    </Paragraph>
+                </Card>
+                <Card title="Third Card" style={{ width: 300, height: 400}}>
+                    <Paragraph>
+                        More Card.
+                    </Paragraph>
+                </Card>
+                <Card title="Third Card" style={{ width: 300, height: 400}}>
+                    <Paragraph>
+                        More Card.
+                    </Paragraph>
+                </Card>
+                <Card title="Third Card" style={{ width: 300, height: 400}}>
+                    <Paragraph>
+                        More Card.
+                    </Paragraph>
+                </Card>
+            </Space>
+        )
     }
+}
 
-    componentDidMount() {
-        this.timerID = setInterval(
-            () => {
-                return this.tick();
-            },
-            1000
-        );
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.timerID);
-    }
-
-    tick() {
-        this.setState({
-            date: new Date()
-        });
-    }
-
+export class TestTab extends React.Component {
     render() {
         return (
             <div>
-                <h3>It is {this.state.date.toLocaleTimeString()}.</h3>
+                <Row>
+                    <Col span={24}>col</Col>
+                </Row>
+                <Row>
+                    <Col span={12}>col-12</Col>
+                    <Col span={12}>col-12</Col>
+                </Row>
             </div>
         )
     }
 }
+
 
 

@@ -16,10 +16,14 @@ const Format: FC = () => {
     const SelectTab = (param: SelectParam) => {
         SetCurrentTab(param.key)
     }
+    const [CurrentHeaderTab, SetCurrentHeaderTab] = useState("1")
+    const SelectHeaderTab = (headerparam: SelectParam) => {
+        SetCurrentHeaderTab(headerparam.key)
+    }
     return <Layout>
         <Header style={{position:'fixed', zIndex: 1, width:'100%'}}>
             <div className = "Logo"></div>
-            <Menu theme="dark" mode="horizontal" style={{paddingLeft:150}} defaultSelectedKeys={['1']}>
+            <Menu onSelect={SelectHeaderTab} theme="dark" mode="horizontal" style={{paddingLeft:150}} defaultSelectedKeys={['0']}>
                 <Menu.Item key="1">About 1</Menu.Item>
                 <Menu.Item key="2">About 2</Menu.Item>
                 <Menu.Item key="3">About 3</Menu.Item>
@@ -31,11 +35,12 @@ const Format: FC = () => {
             position: 'fixed',
             left: 0,
         }}>
-            <Menu onSelect={SelectTab} theme="dark" mode="inline" style={{paddingTop: 80}} defaultSelectedKeys={['1']}>
+            <Menu onSelect={SelectTab} theme="dark" mode="inline" style={{paddingTop: 80}} defaultSelectedKeys={["1"]}>
                 <Menu.Item key="1" icon={<UserOutlined />}>Home</Menu.Item>
                 <Menu.Item key="2" icon={<VideoCameraOutlined />}>TicTacToe</Menu.Item>
-                <Menu.Item key="3" icon={<UploadOutlined />}>Big Button</Menu.Item>
-                <Menu.Item key="4" icon={<TeamOutlined />}>Option 4</Menu.Item>
+                <Menu.Item key="3" icon={<UploadOutlined />}>Garage</Menu.Item>
+                <Menu.Item key="4" icon={<TeamOutlined />}>Cards</Menu.Item>
+                <Menu.Item key="5" icon={<ShopOutlined />}>Test</Menu.Item>
             </Menu>
         </Sider>
         <Layout className="site-layout" style={{marginLeft: 200}}>
@@ -47,6 +52,8 @@ const Format: FC = () => {
     </Layout>
 
 };
+
+
 
 export default Format;
 
