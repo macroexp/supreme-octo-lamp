@@ -5,6 +5,7 @@ import { SearchOutlined, AppstoreOutlined,BarChartOutlined,CloudOutlined,
 import { Game } from '../components/game';
 import { stringify } from 'querystring';
 import { type } from 'os';
+import { responsiveMap } from 'antd/lib/_util/responsiveObserve';
 
 const { Title, Paragraph, Text, Link } = Typography;
 const { Header, Content, Footer, Sider } = Layout;
@@ -13,15 +14,17 @@ type contentProps = {message: string, setMessage: (message:string) => void}
 
 export class ActualContent extends React.Component<contentProps> {
     ButtonClick = async() => {
-        const response = await fetch("http://localhost:7000/manual", {
+        const name = "manual";
+        const age = "92";
+        const response = await fetch('http://localhost:7000/' + name + '/' + age, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({tim: 5, varioustextandthings: "farts."})
-        })
+        });
         let objects = await response.json();
-        this.props.setMessage(objects.yourname);
+        this.props.setMessage(objects.yourname + objects.yourage);
     }
 
     render() {
@@ -64,7 +67,7 @@ export class ActualContent extends React.Component<contentProps> {
                 <Space direction="vertical">
                     <Text>{this.props.message}</Text>
                     <Text type="warning">Warning Text</Text>
-                    <Text strong underline>Strong Underlined Text</Text>
+                    <Text strong underline>{}</Text>
                     <Link href="https://ant.design/components/typography/">
                         For all text varieties click here.
                     </Link>

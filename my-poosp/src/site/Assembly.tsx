@@ -1,22 +1,18 @@
 import React, { FC, useState } from 'react';
 import './Assembly.css'
-import { Typography, Divider, Space, Button, Tooltip, Layout, Menu, Breadcrumb } from 'antd';
-import { SearchOutlined, AppstoreOutlined,BarChartOutlined,CloudOutlined,
-    ShopOutlined, TeamOutlined, UserOutlined, UploadOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import App from '../App';
+import { Layout, Menu } from 'antd';
+import { ShopOutlined, TeamOutlined, UserOutlined, UploadOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { SelectParam } from 'antd/lib/menu';
-import { Game } from '../components/game';
 import { BodyContent } from './content';
 
-const { Title, Paragraph, Text, Link } = Typography;
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 const Format: FC = () => {
     const [CurrentTab, SetCurrentTab] = useState("1");
     const SelectTab = (param: SelectParam) => {
         SetCurrentTab(param.key)
     }
-    const [CurrentHeaderTab, SetCurrentHeaderTab] = useState("1")
+    const [, SetCurrentHeaderTab] = useState("1")
     const SelectHeaderTab = (headerparam: SelectParam) => {
         SetCurrentHeaderTab(headerparam.key)
     }

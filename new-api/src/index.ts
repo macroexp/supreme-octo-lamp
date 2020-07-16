@@ -6,19 +6,31 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+
+
 app.get('/', (req, res) => {
     res.send("Poopdddddddddddddd")
 });
 
-app.get('/:name', (req, res) => {
-    res.send("Poopdddddddddddddd" + req.params.name)
+app.route('/:name/:age')
+    .get((req, res) => {
+        res.send("Poopdddddddddddddd" + req.params.name + req.params.age)
+    })
+    .post((req, res) => {
+        console.log('working')
+        res.send({...req.body, yourname: req.params.name, yourage: req.params.age})
+    });
+
+/*
+app.get('/:name/:date', (req, res) => {
+    
 });
 
-app.post('/:name', (req, res) => {
+app.post('/:name/:date', (req, res) => {
     console.log('working')
-    res.send({...req.body, yourname: req.params.name})
+    res.send({...req.body, yourname: req.params.name, yourdate: req.params.date})
 });
-
+*/
 
 
 const server = app.listen(7000, () => {
