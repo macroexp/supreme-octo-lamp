@@ -1,5 +1,7 @@
 import express from 'express';
-import cors from 'cors';
+import cors from 'cors'; 
+import parser from './serial';
+
 
 const app = express();
 
@@ -21,20 +23,14 @@ app.route('/:name/:age')
         res.send({...req.body, yourname: req.params.name, yourage: req.params.age})
     });
 
-/*
-app.get('/:name/:date', (req, res) => {
-    
-});
-
-app.post('/:name/:date', (req, res) => {
-    console.log('working')
-    res.send({...req.body, yourname: req.params.name, yourdate: req.params.date})
-});
-*/
-
+app.route('/light')
+    .get((req, res) => {
+        res.send({lightstate: parser.lightState})
+    });
 
 const server = app.listen(7000, () => {
     console.log('Listening on port 7000');
 });
+
 
 

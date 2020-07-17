@@ -16,7 +16,7 @@ export class ActualContent extends React.Component<contentProps> {
     ButtonClick = async() => {
         const name = "manual";
         const age = "92";
-        const response = await fetch('http://localhost:7000/' + name + '/' + age, {
+        const response = await fetch(`http://localhost:7000/${name}/${age}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
